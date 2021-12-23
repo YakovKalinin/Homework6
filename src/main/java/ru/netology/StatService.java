@@ -39,8 +39,8 @@ public class StatService {
     public int salesUnderAvg (int[] sales) {
         int sumMonth = 0;
         for (int sale : sales) {
-            if (sale < calcSum(sales) / sales.length) {
-            sumMonth = sumMonth + 1;
+            if (sale < findAvg(sales)) {
+            sumMonth++;
             }
         }
         return sumMonth;
@@ -48,8 +48,8 @@ public class StatService {
     public int salesOverAvg (int[] sales) {
         int sumMonth = 0;
         for (int sale : sales) {
-            if (sale > calcSum(sales) / sales.length) {
-                sumMonth = sumMonth + 1;
+            if (sale > findAvg(sales)) {
+                sumMonth++;
             }
         }
         return sumMonth;
