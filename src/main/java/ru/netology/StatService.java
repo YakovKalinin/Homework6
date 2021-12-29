@@ -12,40 +12,45 @@ public class StatService {
     }
 
     public int findAvg(int[] sales) {
+
         return calcSum(sales) / sales.length;
     }
-    public int minSales (int[] sales) {
+
+    public int minSales(int[] sales) {
         int minMonth = 0;
         int month = 0;
         for (int sale : sales) {
             if (sale <= sales[minMonth]) {
                 minMonth = month;
             }
-            month = month + 1;
+            month++;
         }
         return minMonth + 1;
     }
-    public int maxSales (int[] sales) {
+
+    public int maxSales(int[] sales) {
         int maxMonth = 0;
         int month = 0;
         for (int sale : sales) {
             if (sale >= sales[maxMonth]) {
                 maxMonth = month;
             }
-            month = month + 1;
+            month++;
         }
         return maxMonth + 1;
     }
-    public int salesUnderAvg (int[] sales) {
+
+    public int salesUnderAvg(int[] sales) {
         int sumMonth = 0;
         for (int sale : sales) {
             if (sale < findAvg(sales)) {
-            sumMonth++;
+                sumMonth++;
             }
         }
         return sumMonth;
     }
-    public int salesOverAvg (int[] sales) {
+
+    public int salesOverAvg(int[] sales) {
         int sumMonth = 0;
         for (int sale : sales) {
             if (sale > findAvg(sales)) {
